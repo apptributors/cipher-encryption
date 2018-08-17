@@ -11,7 +11,7 @@ class XorCipherEncryption : public CipherEncryption
   protected:
     char *getEncryptionKey() const
     {
-        return const_cast<char *>("x006");
+        return "x006";
     }
 
   public:

@@ -9,7 +9,7 @@ class BitwiseCipherEncryption : public CipherEncryption
   protected:
     char *getEncryptionKey() const
     {
-        return const_cast<char *>("x001");
+        return "x001";
     }
 
   public:

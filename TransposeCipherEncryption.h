@@ -32,7 +32,7 @@ class TransposeCipherEncryption : public CipherEncryption
   protected:
     char *getEncryptionKey() const
     {
-        return const_cast<char *>("x004");
+        return "x004";
     }
 
   public:

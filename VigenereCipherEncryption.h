@@ -13,7 +13,7 @@ class VigenereCipherEncryption : public CipherEncryption
   protected:
     char *getEncryptionKey() const
     {
-        return const_cast<char *>("x005");
+        return "x005";
     }
 
   public:

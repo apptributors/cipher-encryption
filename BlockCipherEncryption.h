@@ -11,7 +11,7 @@ class BlockCipherEncryption : public CipherEncryption
   protected:
     char *getEncryptionKey() const
     {
-        return const_cast<char *>("x002");
+        return "x002";
     }
 
   public:

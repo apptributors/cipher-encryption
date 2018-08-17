@@ -10,7 +10,7 @@ class CaesarCipherEncryption : public CipherEncryption
   protected:
     char *getEncryptionKey() const
     {
-        return const_cast<char *>("x003");
+        return "x003";
     }
 
   public:
