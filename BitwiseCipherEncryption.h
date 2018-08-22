@@ -1,6 +1,6 @@
 #ifndef BITWISE_CIPHER_ENCRYPTION_H
 #define BITWISE_CIPHER_ENCRYPTION_H
-#include <string.h>
+#include <cstring>
 
 #include "CipherEncryption.h"
 

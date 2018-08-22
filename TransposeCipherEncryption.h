@@ -1,7 +1,7 @@
 #ifndef TRANSPOSE_CIPHER_ENCRYPTION
 #define TRANSPOSE_CIPHER_ENCRYPTION
-#include <math.h>
-#include <string.h>
+#include <cmath>
+#include <cstring>
 
 #include "CipherEncryption.h"
 

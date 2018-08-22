@@ -1,7 +1,6 @@
-#pragma GCC diagnostic ignored "-Wwrite-strings"
 #ifndef CAESAR_CIPHER_ENCRYPTION_H
 #define CAESAR_CIPHER_ENCRYPTION_H
-#include <string.h>
+#include <cstring>
 
 #include "CipherEncryption.h"
 

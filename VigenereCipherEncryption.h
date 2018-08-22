@@ -1,7 +1,8 @@
 #ifndef VIGENERE_CIPHER_ENCRYPTION_H
 #define VIGENERE_CIPHER_ENCRYPTION_H
-#include <ctype.h>
-#include <string.h>
+#include <cctype>
+#include <cmath>
+#include <cstring>
 
 #include "CipherEncryption.h"
 
@@ -13,7 +14,7 @@ class VigenereCipherEncryption : public CipherEncryption
   protected:
     char *getEncryptionKey() const
     {
-        return "x005";
+        return const_cast<char*>("x005");
     }
 
   public:
@@ -23,26 +24,42 @@ class VigenereCipherEncryption : public CipherEncryption
 
 char VigenereCipherEncryption::encodeKeyValue(int value)
 {
-    if (value >= 'A' && value <= 'Z')
-        return value - 'A';
+    char key = 0;
+    if (value > 'z')
+        key = value;
+    else if (value >= 'A' && value <= 'Z')
+        key =  value - 'A' + 1;
     else if (value >= 'a' && value <= 'z')
-        return 26 + value - 'a';
+        key =  26 + value - 'a' + 1;
     else if (value >= '0' && value <= '9')
-        return 52 + value - '0';
-    else
-        return -1;
+        key =  52 + value - '0' + 1;
+    else if (value > 'Z')
+        key = value + 26;
+    else if (value < '0')
+        key = value + 62;
+    else if (value > '9')
+        key = value + 52;
+    return key;
 }
 
 char VigenereCipherEncryption::decodeKeyValue(int value)
 {
-    if (value >= 0 && value <= 25)
-        return value + 'A';
-    else if (value >= 26 && value <= 51)
-        return value + 'a' - 26;
-    else if (value >= 52 && value <= 61)
-        return value + '0' - 52;
-    else
-        return -1;
+    int dekey = 0;
+    if (value > 'z')
+        dekey = value;
+    else if (value >= 1 && value <= 26)
+        dekey =  value + 'A' - 1;
+    else if (value >= 27 && value <= 52)
+        dekey =  value + 'a' - 27;
+    else if (value >= 53 && value <= 62)
+        dekey =  value + '0' - 53;
+    else if (value < 110)
+        dekey = value - 62;
+    else if (value < 117)
+        dekey = value - 52;
+    else if (value < 123)
+        dekey = value - 26;
+    return dekey;
 }
 
 char *VigenereCipherEncryption::encrypt(char *message)
@@ -51,12 +68,7 @@ char *VigenereCipherEncryption::encrypt(char *message)
     char *output = new char[SIZE];
     while (*message)
     {
-        if (!isalnum(*message))
-            *output = *message;
-        else
-        {
-            *output = encodeKeyValue(*message);
-        }
+        *output = encodeKeyValue(*message);
         message++;
         output++;
     }

@@ -1,6 +1,6 @@
 #ifndef XOR_CIPHER_ENCRYPTION_H
 #define XOR_CIPHER_ENCRYPTION_H
-#include <string.h>
+#include <cstring>
 
 #include "CipherEncryption.h"
 
