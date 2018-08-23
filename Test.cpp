@@ -1,5 +1,6 @@
 #include "CipherEncryption.h"
 #include "VigenereCipherEncryption.h"
+#include <fstream>
 #include <iostream>
 
 using namespace std;
@@ -7,13 +8,19 @@ using namespace std;
 int main()
 {
     VigenereCipherEncryption vce;
-    char* a = (char*)"This is UBUNTU dev setup";
-    char* b = vce.encrypt(a);
-    char* c = vce.decrypt(b);
-    cout << "Message => " << a;
-    cout << endl << "Encrypt => " << b;
-    cout << endl << endl;
-    for (int i = 0; i < strlen(b); i++)
-        cout << *(c + i) << ',';
-    return 0;
+    ifstream fin("BitwiseCipherEncryption.h");
+    char line[100];
+    char* a = (char*) "";
+    char* m = nullptr;
+    while (!fin.eof()) {
+        fin.getline(line, '\n', 100);
+        strcat(a, line);
+    }
+    cout << "Original Text file : \n";
+    cout << a;
+    char* n = vce.encrypt(a);
+    cout << "Encrypted Text File : \n";
+    memcpy(m, vce.decrypt(n), strlen(a));
+    if (strcmp(m, a) == 0)
+        cout << "\n\nDecrypt Successful";
 }
