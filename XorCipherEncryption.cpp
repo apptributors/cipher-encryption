@@ -7,7 +7,7 @@ XorCipherEncryption::XorCipherEncryption(char keyring)
 
 char *XorCipherEncryption::getEncryptionKey() const
 {
-    return const_cast<char *>("(⌐■_■)");
+    return const_cast<char *>("ce7");
 }
 
 char *XorCipherEncryption::encrypt(char *message)

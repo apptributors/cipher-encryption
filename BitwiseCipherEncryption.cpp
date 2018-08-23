@@ -2,7 +2,7 @@
 
 char *BitwiseCipherEncryption::getEncryptionKey() const
 {
-    return const_cast<char *>("(ʘ‿ʘ)");
+    return const_cast<char *>("ce1");
 }
 
 char *BitwiseCipherEncryption::encrypt(char *message)

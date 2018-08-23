@@ -2,7 +2,7 @@
 
 char *VigenereCipherEncryption::getEncryptionKey() const
 {
-    return const_cast<char *>("\_(ʘ_ʘ)_/");
+    return const_cast<char *>("ce6");
 }
 
 char VigenereCipherEncryption::encodeKeyValue(int value)

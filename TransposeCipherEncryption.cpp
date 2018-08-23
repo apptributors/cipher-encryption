@@ -2,7 +2,7 @@
 
 char *TransposeCipherEncryption::getEncryptionKey() const
 {
-    return const_cast<char *>("◕‿◕");
+    return const_cast<char *>("ce5");
 }
 
 int TransposeCipherEncryption::isAPerfectSquare(int num)

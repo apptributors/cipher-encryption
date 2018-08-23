@@ -7,7 +7,7 @@ BlockCipherEncryption::BlockCipherEncryption(char *keyring)
 
 char *BlockCipherEncryption::getEncryptionKey() const
 {
-    return const_cast<char *>("(ಠ_ಠ)");
+    return const_cast<char *>("ce2");
 }
 
 char *BlockCipherEncryption::encrypt(char *message)

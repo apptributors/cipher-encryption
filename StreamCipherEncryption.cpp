@@ -2,7 +2,7 @@
 
 char *StreamCipherEncryption::getEncryptionKey() const
 {
-    return const_cast<char *>("(ಠ⌣ಠ)");
+    return const_cast<char *>("ce4");
 }
 
 char *StreamCipherEncryption::reverseString(char *string)

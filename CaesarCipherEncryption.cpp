@@ -2,7 +2,7 @@
 
 char *CaesarCipherEncryption::getEncryptionKey() const
 {
-    return const_cast<char *>("(ಠ‿ಠ)");
+    return const_cast<char *>("ce3");
 }
 
 char *CaesarCipherEncryption::encrypt(char *message)
