@@ -9,10 +9,7 @@ class XorCipherEncryption : public CipherEncryption
     char key;
 
   protected:
-    char *getEncryptionKey() const
-    {
-        return "x006";
-    }
+    char *getEncryptionKey() const;
 
   public:
     XorCipherEncryption(char);
